@@ -16,7 +16,7 @@ namespace CafeSystemDemo
         public DataBase()
         {
             // "Server=<YOUR_HOST;DataBase=YOUR_DATABASE;Uid=USERNAME; pwd=PASSWORD>"
-            myConnectionString = "";
+            myConnectionString = "Server=localhost;DataBase= cafe; Uid= root;pwd= Galata4*";
         }
 
         public List<Customer> GetCustomers()
@@ -42,6 +42,7 @@ namespace CafeSystemDemo
                         }
                     }
                 }
+                connection.Close();
             }
             Console.WriteLine(customers);
             return customers;
@@ -70,6 +71,7 @@ namespace CafeSystemDemo
                         }
                     }
                 }
+                connection.Close();
             }
             Console.WriteLine(products);
             return products;
@@ -103,6 +105,7 @@ namespace CafeSystemDemo
                         }
                     }
                 }
+                connection.Close();
             }
             return orders;
         }
@@ -121,6 +124,7 @@ namespace CafeSystemDemo
                     command.Parameters.AddWithValue("@customerName", customerName);
                     command.ExecuteNonQuery();
                 }
+                connection.Close();
             }
             MessageBox.Show("Custommer Adding");
         }
@@ -139,6 +143,7 @@ namespace CafeSystemDemo
 
                     command.ExecuteNonQuery();
                 }
+                connection.Close();
             }
             MessageBox.Show("Product Adding");
         }
@@ -159,6 +164,7 @@ namespace CafeSystemDemo
 
                     command.ExecuteNonQuery();
                 }
+                connection.Close();
             }
             MessageBox.Show("Add Order");
         }
@@ -176,6 +182,7 @@ namespace CafeSystemDemo
 
                     command.ExecuteNonQuery();
                 }
+                connection.Close();
             }
         }
 
@@ -192,6 +199,7 @@ namespace CafeSystemDemo
 
                     command.ExecuteNonQuery();
                 }
+                connection.Close();
             }
         }
 
